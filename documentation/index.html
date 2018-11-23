@@ -828,7 +828,7 @@
 </ul>
 <h2 id="problems">Problems<a class="headerlink" href="#problems" title="Permanent link">&para;</a></h2>
 <p>Each problem has a specific set of optional <code class="codehilite">problem_params</code> described here.</p>
-<h5 id="compressionelasticexact">CompressionElasticExact<a class="headerlink" href="#compressionelasticexact" title="Permanent link">&para;</a></h5>
+<h3 id="compressionelasticexact">CompressionElasticExact<a class="headerlink" href="#compressionelasticexact" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
@@ -840,23 +840,23 @@ f_{3D}(x,y,z) &amp;= -\begin{bmatrix}(xy + x^2 + y^3 + 6z)/14\\ (zx - z^3 + xy^2
 f_{2D}(x,y) &= -\begin{bmatrix}(y^3 + x^2 + xy)/20\\ (3x^4 + xy^2 + x)/20\end{bmatrix}\\
 f_{3D}(x,y,z) &= -\begin{bmatrix}(xy + x^2 + y^3 + 6z)/14\\ (zx - z^3 + xy^2 + 3x^4)/14\\ (xyz + y^2z^2 - 2x)/14\end{bmatrix}
 \end{align}</script></span></p>
-<h5 id="cubic">Cubic<a class="headerlink" href="#cubic" title="Permanent link">&para;</a></h5>
+<h3 id="cubic">Cubic<a class="headerlink" href="#cubic" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solve for<br/>
 <span><span class="MathJax_Preview">f(x,y,z) = (2y-0.9)^4 + 0.1</span><script type="math/tex">f(x,y,z) = (2y-0.9)^4 + 0.1</script></span></p>
-<h5 id="drivencavity">DrivenCavity<a class="headerlink" href="#drivencavity" title="Permanent link">&para;</a></h5>
+<h3 id="drivencavity">DrivenCavity<a class="headerlink" href="#drivencavity" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: mixed<br/>
 <strong>Description</strong>: solve for zero right-hand side, and 0.25 for boundary id 1<br/></p>
-<h5 id="elastic">Elastic<a class="headerlink" href="#elastic" title="Permanent link">&para;</a></h5>
+<h3 id="elastic">Elastic<a class="headerlink" href="#elastic" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
 <strong>Description</strong>: solve for zero right-hand side, -0.25 for boundary id &#8533;, 0.25 for id 3/6<br/></p>
-<h5 id="elasticexact">ElasticExact<a class="headerlink" href="#elasticexact" title="Permanent link">&para;</a></h5>
+<h3 id="elasticexact">ElasticExact<a class="headerlink" href="#elasticexact" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
@@ -868,22 +868,22 @@ f_{3D}(x,y,z) &amp;= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 
 f_{2D}(x,y) &= \begin{bmatrix}(y^3 + x^2 + xy)/50\\ (3x^4 + xy^2 + x)/50\end{bmatrix}\\
 f_{3D}(x,y,z) &= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 + 3x^4)/80\\ (xyz + y^2 z^2 - 2x)/80\end{bmatrix}
 \end{align}</script></span></p>
-<h5 id="elasticzerobc">ElasticZeroBC<a class="headerlink" href="#elasticzerobc" title="Permanent link">&para;</a></h5>
+<h3 id="elasticzerobc">ElasticZeroBC<a class="headerlink" href="#elasticzerobc" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
 <strong>Description</strong>: solve for [0, 0.5, 0] right-hand side and zero boundary condition<br/></p>
-<h5 id="flow">Flow<a class="headerlink" href="#flow" title="Permanent link">&para;</a></h5>
+<h3 id="flow">Flow<a class="headerlink" href="#flow" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: mixed<br/>
 <strong>Description</strong>: solve for zero right-hand side, [0.25, 0, 0] for boundary id &#8531;, [0, 0, 0] for 7<br/></p>
-<h5 id="franke">Franke<a class="headerlink" href="#franke" title="Permanent link">&para;</a></h5>
+<h3 id="franke">Franke<a class="headerlink" href="#franke" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solves for the 2D and 3D Franke function</p>
-<h5 id="generictensor">GenericTensor<a class="headerlink" href="#generictensor" title="Permanent link">&para;</a></h5>
+<h3 id="generictensor">GenericTensor<a class="headerlink" href="#generictensor" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tesor<br/>
@@ -914,24 +914,24 @@ f_{3D}(x,y,z) &= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 + 3x
     <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sin(x)+y&quot;</span><span class="p">,</span> <span class="s2">&quot;z^2&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span><span class="nt">&quot;Formulas are supported&quot;</span>
 <span class="p">}]</span>
 </pre></div></p>
-<h5 id="gravity">Gravity<a class="headerlink" href="#gravity" title="Permanent link">&para;</a></h5>
+<h3 id="gravity">Gravity<a class="headerlink" href="#gravity" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: true<br/>
 <strong>Form</strong>: tensor<br/>
 <strong>Description</strong>: solves for 0.1 body force in y direction and zeor for boundray 4</p>
-<h5 id="kernel">Kernel<a class="headerlink" href="#kernel" title="Permanent link">&para;</a></h5>
+<h3 id="kernel">Kernel<a class="headerlink" href="#kernel" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar/tensor<br/>
 <strong>Description</strong>: solves the omogenous PDE with <code class="codehilite">n_kernels</code> kernels placed on the bounding box at <code class="codehilite">kernel_distance</code><br/>
 <strong>Options</strong>: <code class="codehilite">n_kernels</code> sets the number of kernels, <code class="codehilite">kernel_distance</code> sets the distance from the bounding box</p>
-<h5 id="linear">Linear<a class="headerlink" href="#linear" title="Permanent link">&para;</a></h5>
+<h3 id="linear">Linear<a class="headerlink" href="#linear" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solve for<br/>
 f(x,y,z) = x</p>
-<h5 id="linearelasticexact">LinearElasticExact<a class="headerlink" href="#linearelasticexact" title="Permanent link">&para;</a></h5>
+<h3 id="linearelasticexact">LinearElasticExact<a class="headerlink" href="#linearelasticexact" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
@@ -943,12 +943,12 @@ f_{3D}(x,y,z) &amp;= \begin{bmatrix}-(y + x + z)/50\\ -(3x + y - z)/50\\ -(x + y
 f_{2D}(x,y) &= \begin{bmatrix}-(y + x)/50\\ -(3x + y)/50\end{bmatrix}\\
 f_{3D}(x,y,z) &= \begin{bmatrix}-(y + x + z)/50\\ -(3x + y - z)/50\\ -(x + y - 2z)/50\end{bmatrix}\\
 \end{align}</script></span></p>
-<h5 id="minsurf">MinSurf<a class="headerlink" href="#minsurf" title="Permanent link">&para;</a></h5>
+<h3 id="minsurf">MinSurf<a class="headerlink" href="#minsurf" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solve for -10 for rhs, and zero Dirichelt boundary condition</p>
-<h5 id="pointbasedtensor">PointBasedTensor<a class="headerlink" href="#pointbasedtensor" title="Permanent link">&para;</a></h5>
+<h3 id="pointbasedtensor">PointBasedTensor<a class="headerlink" href="#pointbasedtensor" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tesor<br/>
@@ -989,13 +989,13 @@ f_{3D}(x,y,z) &= \begin{bmatrix}-(y + x + z)/50\\ -(3x + y - z)/50\\ -(x + y - 2
     <span class="p">}</span>
 <span class="p">}]</span>
 </pre></div></p>
-<h5 id="quadratic">Quadratic<a class="headerlink" href="#quadratic" title="Permanent link">&para;</a></h5>
+<h3 id="quadratic">Quadratic<a class="headerlink" href="#quadratic" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solve for<br/>
 <span><span class="MathJax_Preview">f(x,y,z) = x^2</span><script type="math/tex">f(x,y,z) = x^2</script></span></p>
-<h5 id="quadraticelasticexact">QuadraticElasticExact<a class="headerlink" href="#quadraticelasticexact" title="Permanent link">&para;</a></h5>
+<h3 id="quadraticelasticexact">QuadraticElasticExact<a class="headerlink" href="#quadraticelasticexact" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
@@ -1007,7 +1007,7 @@ f_{3D}(x,y,z) &amp;= \begin{bmatrix}-(y^2 + x^2 + xy + yz)/50\\ -(3x^2 + y + z^2
 f_{2D}(x,y) &= \begin{bmatrix} -(y^2 + x^2 + xy)/50\\ -(3x^2 + y)/50\end{bmatrix}\\
 f_{3D}(x,y,z) &= \begin{bmatrix}-(y^2 + x^2 + xy + yz)/50\\ -(3x^2 + y + z^2)/50\\ -(xz + y^2 - 2z)/50\end{bmatrix}
 \end{align}</script></span></p>
-<h5 id="sine">Sine<a class="headerlink" href="#sine" title="Permanent link">&para;</a></h5>
+<h3 id="sine">Sine<a class="headerlink" href="#sine" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
@@ -1019,28 +1019,28 @@ f(x,y,z) &amp;= \sin(10x)\sin(10y)\sin(10z)
 f(x,y) &= \sin(10x)\sin(10y)\\
 f(x,y,z) &= \sin(10x)\sin(10y)\sin(10z)
 \end{align}</script></span></p>
-<h5 id="testproblem">TestProblem<a class="headerlink" href="#testproblem" title="Permanent link">&para;</a></h5>
+<h3 id="testproblem">TestProblem<a class="headerlink" href="#testproblem" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solve for extreme problem to test errors for high order discretizations</p>
-<h5 id="timedependentflow">TimeDependentFlow<a class="headerlink" href="#timedependentflow" title="Permanent link">&para;</a></h5>
+<h3 id="timedependentflow">TimeDependentFlow<a class="headerlink" href="#timedependentflow" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: true<br/>
 <strong>Form</strong>: mixed<br/>
 <strong>Description</strong>: solve for zero right-hand side, [0.25, 0, 0] for boundary id &#8531;, [0, 0, 0] for 7, and zero inital velocity<br/></p>
-<h5 id="timedependentscalar">TimeDependentScalar<a class="headerlink" href="#timedependentscalar" title="Permanent link">&para;</a></h5>
+<h3 id="timedependentscalar">TimeDependentScalar<a class="headerlink" href="#timedependentscalar" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: true<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solve for one right-hand side, zero boundary condition, and zero time boundary<br/></p>
-<h5 id="torsionelastic">TorsionElastic<a class="headerlink" href="#torsionelastic" title="Permanent link">&para;</a></h5>
+<h3 id="torsionelastic">TorsionElastic<a class="headerlink" href="#torsionelastic" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
 <strong>Description</strong>: solve for zero body forces, <code class="codehilite">fixed_boundary</code> fixed (zero displacement), <code class="codehilite">turning_boundary</code> rotating around <code class="codehilite">axis_coordiante</code> for <code class="codehilite">n_turns</code><br/>
 <strong>Options</strong>: <code class="codehilite">fixed_boundary</code> id of the fixed boundary, <code class="codehilite">turning_boundary</code> id of the moving boundary, <code class="codehilite">axis_coordiante</code> coordinate of the rotating axis, <code class="codehilite">n_turns</code> number of turns</p>
-<h5 id="zero_bc">Zero_BC<a class="headerlink" href="#zero_bc" title="Permanent link">&para;</a></h5>
+<h3 id="zero_bc">Zero_BC<a class="headerlink" href="#zero_bc" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: tensor<br/>
