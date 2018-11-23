@@ -5,4 +5,14 @@
      <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    <url>
+     <loc>http://polyfem.github.io/polyfem/tutorial/</loc>
+     <lastmod>2018-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://polyfem.github.io/polyfem/documentation/</loc>
+     <lastmod>2018-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>
