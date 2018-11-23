@@ -293,6 +293,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" title="Citation" class="md-nav__link">
+    Citation
+  </a>
+  
+</li>
+      
       
       
       
@@ -369,6 +383,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" title="Citation" class="md-nav__link">
+    Citation
+  </a>
+  
+</li>
+      
       
       
       
@@ -389,6 +417,7 @@
                 
                 
                 <h1 id="polyfem">PolyFEM<a class="headerlink" href="#polyfem" title="Permanent link">&para;</a></h1>
+<p><em>A polyvalent C++ FEM library.</em></p>
 <p><a href="https://travis-ci.com/polyfem/polyfem"><img alt="Build Status" src="https://travis-ci.com/polyfem/polyfem.svg?branch=master" /></a>
 <a href="https://ci.appveyor.com/project/teseoch/polyfem/branch/master"><img alt="Build status" src="https://ci.appveyor.com/api/projects/status/tseks5d0kydqhjot/branch/master?svg=true" /></a></p>
 <h2 id="compilation">Compilation<a class="headerlink" href="#compilation" title="Permanent link">&para;</a></h2>
@@ -407,21 +436,32 @@ The formula for higher order bases are computed at CMake time using an external 
 <li><code class="codehilite">quadpy</code> (optional)</li>
 </ul>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>The main executable, <code class="codehilite">./PolyFEM_bin</code>, can be called with a GUI or through a command-line interface. The GUI is pretty simple and should be self-explanatory. To call the command-line interface, set the setup an <code class="codehilite">example.json</code> file, and run as follows:</p>
-<div class="codehilite"><pre><span></span>./PolyFEM_bin --cmd --json ../example.json
-</pre></div>
-
-
-<p>For the complete list of options use</p>
-<div class="codehilite"><pre><span></span>./PolyFEM_bin -h
+<p>The main executable, <code class="codehilite">./PolyFEM_bin</code>, can be called with a GUI or through a command-line interface. Simply run: </p>
+<div class="codehilite"><pre><span></span>./PolyFEM_bin
 </pre></div>
 
 
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="tutorial/">Quickstart tutorial</a> (coming soon)</li>
+<li><a href="tutorial/">Quickstart tutorial</a> (coming soon).</li>
 <li><a href="documentation/">Reference documentation</a> for the json configuration and problem types.</li>
 </ul>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>The code of PolyFEM itself is licensed under <a href="LICENSE">MIT License</a>. However, please be mindful of third-party libraries which are used by PolyFEM, and may be available under a different license.</p>
+<h2 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">&para;</a></h2>
+<p>If you use PolyFEM in your project, please consider citing our work:</p>
+<div class="codehilite"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">Schneider:2018:DSA</span><span class="p">,</span>
+    <span class="na">author</span> <span class="p">=</span> <span class="s">{Teseo Schneider and Yixin Hu and Jérémie Dumas and Xifeng Gao and Daniele Panozzo and Denis Zorin}</span><span class="p">,</span>
+    <span class="na">journal</span> <span class="p">=</span> <span class="s">{ACM Transactions on Graphics}</span><span class="p">,</span>
+    <span class="na">link</span> <span class="p">=</span> <span class="s">{}</span><span class="p">,</span>
+    <span class="na">month</span> <span class="p">=</span> <span class="s">{10}</span><span class="p">,</span>
+    <span class="na">number</span> <span class="p">=</span> <span class="s">{6}</span><span class="p">,</span>
+    <span class="na">publisher</span> <span class="p">=</span> <span class="s">{Association for Computing Machinery (ACM)}</span><span class="p">,</span>
+    <span class="na">title</span> <span class="p">=</span> <span class="s">{Decoupling Simulation Accuracy from Mesh Quality}</span><span class="p">,</span>
+    <span class="na">volume</span> <span class="p">=</span> <span class="s">{37}</span><span class="p">,</span>
+    <span class="na">year</span> <span class="p">=</span> <span class="s">{2018}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
