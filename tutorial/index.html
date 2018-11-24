@@ -384,16 +384,16 @@ Press the the load button to load a mesh
 <li>Loads the mesh and normalized it</li>
 <li>Builds the FEM bases, you can change the order by changing discr. To enable <em>pref</em> or <em>spline</em> check the corresponding boxes (before pushing the button)</li>
 <li>Build a denser mesh for visualization purposes.</li>
-<li>Assembles the righ-hand side of the problem. You can change the problem with the problem drop-down menu</li>
-<li>Assembles the matrix. You can change the formulaiton by chaning the drop-down 1D nD Mixed form. The type of formulation depends on the problem. For instance Franke works only with scalar formulaitons, while Elastic only with tensor problems.</li>
+<li>Assembles the right-hand side of the problem. You can change the problem with the problem drop-down menu</li>
+<li>Assembles the matrix. You can change the formulation by changing the drop-down 1D nD Mixed form. The type of formulation depends on the problem. For instance Franke works only with scalar formulations, while Elastic only with tensor problems.</li>
 <li>Solve problem solves the problem.</li>
 <li>You can compute the error for problems with given exact solutions. In case of no exact solution, the program will compute the norms of the solutions
 <img alt="Load mesh" src="../img/t2.png" /></li>
 </ol>
-<p>At the end you can press save VTU to save the <code class="codehilite">result.vtu</code> file in the binary directory. This file can be opeend with <a href="https://www.paraview.org/">Paraview</a></p>
+<p>At the end you can press save VTU to save the <code class="codehilite">result.vtu</code> file in the binary directory. This file can be opened with <a href="https://www.paraview.org/">Paraview</a></p>
 <p><img alt="Load mesh" src="../img/t3.png" /></p>
 <h2 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
-<p>To run the previous experiemnt with a json file crease a <code class="codehilite">run.json</code> containing (refer to <a href="../documentation/">documentation</a> for the full description):</p>
+<p>To run the previous experiment with a json file create a <code class="codehilite">run.json</code> containing (refer to <a href="../documentation/">documentation</a> for the full description):</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;mesh&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;mesh.obj&gt;&quot;</span><span class="p">,</span>
     <span class="nt">&quot;normalize_mesh&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -416,7 +416,7 @@ Press the the load button to load a mesh
 <span class="p">}</span>
 </pre></div>
 
-<p>Then run <code class="codehilite">PolyFEM_bin --json run.json --cmd</code>. You can omit the <code class="codehilite">--cmd</code> argument to open the ui with the parameters.</p>
+<p>Then run <code class="codehilite">PolyFEM_bin --json run.json --cmd</code>. You can omit the <code class="codehilite">--cmd</code> argument to open the UI with the parameters.</p>
                 
                   
                 
