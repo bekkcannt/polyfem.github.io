@@ -735,6 +735,7 @@
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;mesh&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>                    <span class="nt">&quot;Mesh path&quot;</span>
     <span class="s2">&quot;bc_tag&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>                  <span class="nt">&quot;Path to the boundary tag file, each face/edge is associated with an unique number (you can use bc_setter for setting them in 3d)&quot;</span>
+    <span class="s2">&quot;boundary_id_threshold&quot;</span><span class="p">:</span> <span class="mi">-1</span><span class="p">,</span>    <span class="nt">&quot;Distance from bounding box for a face/edge to belong to boundary. Negative falls into defaul: in 2d is 1e-7, in 3d 1e-2&quot;</span>
     <span class="s2">&quot;normalize_mesh&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>         <span class="nt">&quot;Normalize mesh such that it fits in the [0,1] bounding box&quot;</span>
 
     <span class="s2">&quot;n_refs&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>                    <span class="nt">&quot;Number of uniform refinement&quot;</span>
