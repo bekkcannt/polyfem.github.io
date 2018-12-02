@@ -377,6 +377,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#genericscalar" title="GenericScalar" class="md-nav__link">
+    GenericScalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#generictensor" title="GenericTensor" class="md-nav__link">
     GenericTensor
   </a>
@@ -595,6 +602,13 @@
           <li class="md-nav__item">
   <a href="#franke" title="Franke" class="md-nav__link">
     Franke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#genericscalar" title="GenericScalar" class="md-nav__link">
+    GenericScalar
   </a>
   
 </li>
@@ -819,7 +833,7 @@
 <p><strong>mixed_formulation</strong>: IncompressibleLinearElasticity, Stokes</p>
 </li>
 <li>
-<p><strong>problem</strong>: CompressionElasticExact, Cubic, DrivenCavity, Elastic, ElasticExact, ElasticZeroBC, Flow, Franke, GenericTensor, Gravity, Kernel, Linear, LinearElasticExact, MinSurf, PointBasedTensor, Quadratic, QuadraticElasticExact, Sine, TestProblem, TimeDependentFlow, TimeDependentScalar, TorsionElastic, Zero_BC</p>
+<p><strong>problem</strong>: CompressionElasticExact, Cubic, DrivenCavity, Elastic, ElasticExact, ElasticZeroBC, Flow, Franke, GenericScalar, GenericTensor, Gravity, Kernel, Linear, LinearElasticExact, MinSurf, PointBasedTensor, Quadratic, QuadraticElasticExact, Sine, TestProblem, TimeDependentFlow, TimeDependentScalar, TorsionElastic, Zero_BC</p>
 </li>
 <li>
 <p><strong>solver_type</strong>: Eigen::BiCGSTAB, Eigen::ConjugateGradient, Eigen::GMRES, Eigen::MINRES, Eigen::SimplicialLDLT, Eigen::SparseLU, Hypre,Pardiso</p>
@@ -884,6 +898,32 @@ f_{3D}(x,y,z) &= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 + 3x
 <strong>Time dependent</strong>: false<br/>
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solves for the 2D and 3D Franke function</p>
+<h3 id="genericscalar">GenericScalar<a class="headerlink" href="#genericscalar" title="Permanent link">&para;</a></h3>
+<p><strong>Has exact solution</strong>: false<br/>
+<strong>Time dependent</strong>: false<br/>
+<strong>Form</strong>: scalar<br/>
+<strong>Description</strong>: solves for generic tensor problem with zero rhs<br/>
+<strong>Options</strong>:
+<div class="codehilite"><pre><span></span><span class="s2">&quot;use_mixed_formulation&quot;</span><span class="err">:</span> <span class="kc">false</span><span class="err">,</span>     <span class="s2">&quot;Use mixed formulation&quot;</span>
+<span class="s2">&quot;dirichlet_boundary&quot;</span><span class="err">:</span> <span class="p">[</span>             <span class="s2">&quot;List of Dirichelt boundaries&quot;</span>
+<span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">0</span>                      <span class="s2">&quot;Boundary value&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;sin(x)+y&quot;</span>             <span class="s2">&quot;Formulas are supported&quot;</span>
+<span class="p">}]</span><span class="err">,</span>
+<span class="s2">&quot;neumann_boundary&quot;</span><span class="err">:</span> <span class="p">[</span>               <span class="s2">&quot;List of Neumann boundaries&quot;</span>
+<span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                     <span class="nt">&quot;Boundary value&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;x^2&quot;</span>                  <span class="s2">&quot;Formulas are supported&quot;</span>
+<span class="p">}]</span>
+</pre></div></p>
 <h3 id="generictensor">GenericTensor<a class="headerlink" href="#generictensor" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
@@ -903,16 +943,16 @@ f_{3D}(x,y,z) &= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 + 3x
 <span class="p">},</span>
 <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sin(x)+y&quot;</span><span class="p">,</span> <span class="s2">&quot;z^2&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span><span class="nt">&quot;Formulas are supported&quot;</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sin(x)+y&quot;</span><span class="p">,</span> <span class="s2">&quot;z^2&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;Formulas are supported&quot;</span>
 <span class="p">}]</span><span class="err">,</span>
 <span class="s2">&quot;neumann_boundary&quot;</span><span class="err">:</span> <span class="p">[</span>               <span class="s2">&quot;List of Neumann boundaries&quot;</span>
 <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>             <span class="nt">&quot;Boundary vector value&quot;</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>              <span class="s2">&quot;Boundary vector value&quot;</span>
 <span class="p">},</span>
 <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sin(x)+y&quot;</span><span class="p">,</span> <span class="s2">&quot;z^2&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span><span class="nt">&quot;Formulas are supported&quot;</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;sin(z)+y&quot;</span><span class="p">,</span> <span class="s2">&quot;z^2&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="s2">&quot;Formulas are supported&quot;</span>
 <span class="p">}]</span>
 </pre></div></p>
 <h3 id="gravity">Gravity<a class="headerlink" href="#gravity" title="Permanent link">&para;</a></h3>
