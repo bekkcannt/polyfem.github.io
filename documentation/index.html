@@ -757,7 +757,6 @@
 
     <span class="s2">&quot;scalar_formulation&quot;</span><span class="p">:</span> <span class="s2">&quot;Laplacian&quot;</span><span class="p">,</span>
     <span class="nt">&quot;tensor_formulation&quot;</span><span class="p">:</span> <span class="s2">&quot;LinearElasticity&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;mixed_formulation&quot;</span><span class="p">:</span> <span class="s2">&quot;Stokes&quot;</span><span class="p">,</span>
 
     <span class="nt">&quot;count_flipped_els&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>     <span class="nt">&quot;Count (or not) flipped elements&quot;</span>
 
@@ -827,10 +826,9 @@
 </pre></div></p>
 <h3 id="optionals">Optionals<a class="headerlink" href="#optionals" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>scalar_formulation</strong>: Helmholtz, Laplacian</li>
-<li><strong>tensor_formulation</strong>: HookeLinearElasticity, LinearElasticity, NeoHookean, Ogden, SaintVenant</li>
+<li><strong>scalar_formulation</strong>: Helmholtz, Laplacian, Bilaplacian (mixed)</li>
 <li>
-<p><strong>mixed_formulation</strong>: IncompressibleLinearElasticity, Stokes</p>
+<p><strong>tensor_formulation</strong>: HookeLinearElasticity, LinearElasticity, NeoHookean, Ogden, SaintVenant, IncompressibleLinearElasticity (mixed), Stokes (mixed)</p>
 </li>
 <li>
 <p><strong>problem</strong>: CompressionElasticExact, Cubic, DrivenCavity, Elastic, ElasticExact, ElasticZeroBC, Flow, Franke, GenericScalar, GenericTensor, Gravity, Kernel, Linear, LinearElasticExact, MinSurf, PointBasedTensor, Quadratic, QuadraticElasticExact, Sine, TestProblem, TimeDependentFlow, TimeDependentScalar, TorsionElastic, Zero_BC</p>
@@ -864,7 +862,7 @@ f_{3D}(x,y,z) &= -\begin{bmatrix}(xy + x^2 + y^3 + 6z)/14\\ (zx - z^3 + xy^2 + 3
 <h3 id="drivencavity">DrivenCavity<a class="headerlink" href="#drivencavity" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
-<strong>Form</strong>: mixed<br/>
+<strong>Form</strong>: tensor<br/>
 <strong>Description</strong>: solve for zero right-hand side, and 0.25 for boundary id 1<br/></p>
 <h3 id="elastic">Elastic<a class="headerlink" href="#elastic" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
@@ -891,7 +889,7 @@ f_{3D}(x,y,z) &= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 + 3x
 <h3 id="flow">Flow<a class="headerlink" href="#flow" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: false<br/>
-<strong>Form</strong>: mixed<br/>
+<strong>Form</strong>: tensor<br/>
 <strong>Description</strong>: solve for zero right-hand side, [0.25, 0, 0] for boundary id &#8531;, [0, 0, 0] for 7<br/></p>
 <h3 id="franke">Franke<a class="headerlink" href="#franke" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: true<br/>
@@ -904,7 +902,7 @@ f_{3D}(x,y,z) &= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 + 3x
 <strong>Form</strong>: scalar<br/>
 <strong>Description</strong>: solves for generic tensor problem with zero rhs<br/>
 <strong>Options</strong>:
-<div class="codehilite"><pre><span></span><span class="s2">&quot;use_mixed_formulation&quot;</span><span class="err">:</span> <span class="kc">false</span><span class="err">,</span>     <span class="s2">&quot;Use mixed formulation&quot;</span>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;rhs&quot;</span><span class="err">:</span> <span class="mi">3</span>                            <span class="s2">&quot;Rhs of the problem&quot;</span>
 <span class="s2">&quot;dirichlet_boundary&quot;</span><span class="err">:</span> <span class="p">[</span>             <span class="s2">&quot;List of Dirichelt boundaries&quot;</span>
 <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
@@ -930,7 +928,7 @@ f_{3D}(x,y,z) &= \begin{bmatrix}(xy + x^2 + y^3 + 6z)/80\\ (xz - z^3 + xy^2 + 3x
 <strong>Form</strong>: tesor<br/>
 <strong>Description</strong>: solves for generic tensor problem with zero body forces<br/>
 <strong>Options</strong>:
-<div class="codehilite"><pre><span></span><span class="s2">&quot;use_mixed_formulation&quot;</span><span class="err">:</span> <span class="kc">false</span><span class="err">,</span>     <span class="s2">&quot;Use mixed formulation&quot;</span>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;rhs&quot;</span><span class="err">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>                    <span class="s2">&quot;Rhs of the problem&quot;</span>
 <span class="s2">&quot;dirichlet_boundary&quot;</span><span class="err">:</span> <span class="p">[</span>             <span class="s2">&quot;List of Dirichelt boundaries&quot;</span>
 <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>                        <span class="nt">&quot;Boundary id&quot;</span>
@@ -1068,7 +1066,7 @@ f(x,y,z) &= \sin(10x)\sin(10y)\sin(10z)
 <h3 id="timedependentflow">TimeDependentFlow<a class="headerlink" href="#timedependentflow" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
 <strong>Time dependent</strong>: true<br/>
-<strong>Form</strong>: mixed<br/>
+<strong>Form</strong>: tensor<br/>
 <strong>Description</strong>: solve for zero right-hand side, [0.25, 0, 0] for boundary id &#8531;, [0, 0, 0] for 7, and zero inital velocity<br/></p>
 <h3 id="timedependentscalar">TimeDependentScalar<a class="headerlink" href="#timedependentscalar" title="Permanent link">&para;</a></h3>
 <p><strong>Has exact solution</strong>: false<br/>
