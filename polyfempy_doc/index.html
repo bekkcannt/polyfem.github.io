@@ -1,0 +1,736 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A polyvalent C++ FEM library">
+      
+      
+        <link rel="canonical" href="http://polyfem.github.io/polyfem/polyfempy_doc/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
+    
+    
+      
+        <title>Python docs - polyfem</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.11e41852.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7cb342">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.20ef595d.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#class-settings" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://polyfem.github.io/polyfem/" title="polyfem" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"> </i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                polyfem
+              </span>
+              <span class="md-header-nav__topic">
+                Python docs
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/polyfem/polyfem/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyfem/polyfem
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://polyfem.github.io/polyfem/" title="polyfem" class="md-nav__button md-logo">
+      
+        <i class="md-icon"> </i>
+      
+    </a>
+    polyfem
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/polyfem/polyfem/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      polyfem/polyfem
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python [alpha]" class="md-nav__link">
+      Python [alpha]
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python_examples/" title="Jupyter examples" class="md-nav__link">
+      Jupyter examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Python docs
+      </label>
+    
+    <a href="./" title="Python docs" class="md-nav__link md-nav__link--active">
+      Python docs
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-settings" title="class Settings" class="md-nav__link">
+    class Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-drivencavity" title="class DrivenCavity" class="md-nav__link">
+    class DrivenCavity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-flow" title="class Flow" class="md-nav__link">
+    class Flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-franke" title="class Franke" class="md-nav__link">
+    class Franke
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-genericscalar" title="class GenericScalar" class="md-nav__link">
+    class GenericScalar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-generictensor" title="class GenericTensor" class="md-nav__link">
+    class GenericTensor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-gravity" title="class Gravity" class="md-nav__link">
+    class Gravity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-torsion" title="class Torsion" class="md-nav__link">
+    class Torsion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-scalarformulations" title="class ScalarFormulations" class="md-nav__link">
+    class ScalarFormulations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-solver" title="class Solver" class="md-nav__link">
+    class Solver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-tensorformulations" title="class TensorFormulations" class="md-nav__link">
+    class TensorFormulations
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-settings" title="class Settings" class="md-nav__link">
+    class Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-drivencavity" title="class DrivenCavity" class="md-nav__link">
+    class DrivenCavity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-flow" title="class Flow" class="md-nav__link">
+    class Flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-franke" title="class Franke" class="md-nav__link">
+    class Franke
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-genericscalar" title="class GenericScalar" class="md-nav__link">
+    class GenericScalar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-generictensor" title="class GenericTensor" class="md-nav__link">
+    class GenericTensor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-gravity" title="class Gravity" class="md-nav__link">
+    class Gravity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-torsion" title="class Torsion" class="md-nav__link">
+    class Torsion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-scalarformulations" title="class ScalarFormulations" class="md-nav__link">
+    class ScalarFormulations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-solver" title="class Solver" class="md-nav__link">
+    class Solver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-tensorformulations" title="class TensorFormulations" class="md-nav__link">
+    class TensorFormulations
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/polyfem/polyfem.github.io/edit/docs/docs/polyfempy_doc.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Python docs</h1>
+                
+                <h2 id="class-settings">class Settings<a class="headerlink" href="#class-settings" title="Permanent link">&para;</a></h2>
+<p>Class that encodes the settings of the solver, it nodels the input json file</p>
+<p><strong><code class="codehilite">serialize()</code></strong></p>
+<p>stringygied json description of this class, used to run the solver</p>
+<p><strong><code class="codehilite">set_advanced_option(key, value)</code></strong></p>
+<p>Used to set any advanced option not present in this class, for instance set_advanced_option(&ldquo;use_spline&rdquo;,True), see <a href="https://polyfem.github.io/documentation/">https://polyfem.github.io/documentation/</a> for full list</p>
+<p><strong><code class="codehilite">set_isolines_export_path(path)</code></strong></p>
+<p>Sets the path to export the isolines of the solution</p>
+<p><strong><code class="codehilite">set_material_params(name, value)</code></strong></p>
+<p>set the material parameters, for instance set_material_params(&ldquo;E&rdquo;, 200) sets the Young&rsquo;s modulus E to 200. See <a href="https://polyfem.github.io/documentation/#formulations">https://polyfem.github.io/documentation/#formulations</a> for full list</p>
+<p><strong><code class="codehilite">set_problem(problem)</code></strong></p>
+<p>Sets the problem, use any of the problems in Problems</p>
+<p><strong><code class="codehilite">set_solution_export_path(path)</code></strong></p>
+<p>Sets the path to save the solution</p>
+<p><strong><code class="codehilite">set_vtu_export_path(path, bounda_only=False)</code></strong></p>
+<p>Sets the path to export a vtu file with the results, use bounda_only to export only one layer of the mesh in 3d</p>
+<p><strong><code class="codehilite">set_wireframe_export_path(path)</code></strong></p>
+<p>Sets the path to export a wireframe of the mesh</p>
+<h2 id="class-drivencavity">class DrivenCavity<a class="headerlink" href="#class-drivencavity" title="Permanent link">&para;</a></h2>
+<p>Classical driven cavity problem in fluid simulation</p>
+<p><strong><code class="codehilite">name()</code></strong></p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-flow">class Flow<a class="headerlink" href="#class-flow" title="Permanent link">&para;</a></h2>
+<p>Inflow/outflow problem for fluids. You can specify the sideset for the moving fluxes and the list of obstacle sidesets. <a href="https://polyfem.github.io/documentation/#flow">https://polyfem.github.io/documentation/#flow</a></p>
+<p><strong><code class="codehilite">name()</code></strong></p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-franke">class Franke<a class="headerlink" href="#class-franke" title="Permanent link">&para;</a></h2>
+<p>Franke problem with exact solution <a href="https://polyfem.github.io/documentation/#franke">https://polyfem.github.io/documentation/#franke</a></p>
+<p><strong><code class="codehilite">name()</code></strong></p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-genericscalar">class GenericScalar<a class="headerlink" href="#class-genericscalar" title="Permanent link">&para;</a></h2>
+<p>Generic scalar problem <a href="https://polyfem.github.io/documentation/#genericscalar">https://polyfem.github.io/documentation/#genericscalar</a></p>
+<p><strong><code class="codehilite">add_dirichlet_value(id, value)</code></strong></p>
+<p>add the Dirichlet value value for the sideset id</p>
+<p><strong><code class="codehilite">add_neumann_value(id, value)</code></strong></p>
+<p>add the Neumann value value for the sideset id</p>
+<p><strong><code class="codehilite">name()</code></strong></p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-generictensor">class GenericTensor<a class="headerlink" href="#class-generictensor" title="Permanent link">&para;</a></h2>
+<p>Generic tensor problem <a href="https://polyfem.github.io/documentation/#generictensor">https://polyfem.github.io/documentation/#generictensor</a></p>
+<p><strong><code class="codehilite">add_dirichlet_value(id, value, is_dirichlet_dim=None)</code></strong></p>
+<p>add the Dirichlet value value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem. is_dirichlet_dim is a vector of boolean specifying which dimentions are fixed.</p>
+<p><strong><code class="codehilite">add_neumann_value(id, value)</code></strong></p>
+<p>add the Neumann value value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
+<p><strong><code class="codehilite">name()</code></strong></p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-gravity">class Gravity<a class="headerlink" href="#class-gravity" title="Permanent link">&para;</a></h2>
+<p>time dependent gravity problem <a href="https://polyfem.github.io/documentation/#gravity">https://polyfem.github.io/documentation/#gravity</a></p>
+<p><strong><code class="codehilite">name()</code></strong></p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-torsion">class Torsion<a class="headerlink" href="#class-torsion" title="Permanent link">&para;</a></h2>
+<p>3D torsion problem, specify which sideset to fix (fixed_boundary) and which one turns turning_boundary <a href="https://polyfem.github.io/documentation/#torsionelastic">https://polyfem.github.io/documentation/#torsionelastic</a></p>
+<p><strong><code class="codehilite">name()</code></strong></p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-scalarformulations">class ScalarFormulations<a class="headerlink" href="#class-scalarformulations" title="Permanent link">&para;</a></h2>
+<p>Bilaplacian = &lsquo;Bilaplacian&rsquo;</p>
+<p>Helmholtz = &lsquo;Helmholtz&rsquo;</p>
+<p>Laplacian = &lsquo;Laplacian&rsquo;</p>
+<h2 id="class-solver">class Solver<a class="headerlink" href="#class-solver" title="Permanent link">&para;</a></h2>
+<p>Polyfem solver</p>
+<p><strong><code class="codehilite">compute_errors()</code></strong></p>
+<p>compute the error</p>
+<p><strong><code class="codehilite">export_data()</code></strong></p>
+<p>exports all data specified in the settings</p>
+<p><strong><code class="codehilite">export_vtu(path: str)</code></strong></p>
+<p>exports the solution as vtu</p>
+<p><strong><code class="codehilite">export_wire(path: str, isolines: bool = False)</code></strong></p>
+<p>exports wireframe of the mesh</p>
+<p><strong><code class="codehilite">get_log() -&gt; str</code></strong></p>
+<p>gets the log as json</p>
+<p><strong><code class="codehilite">get_pressure() -&gt; numpy.ndarray</code></strong></p>
+<p>returns the pressure</p>
+<p><strong><code class="codehilite">get_sampled_connectivity_frames() -&gt; List[numpy.ndarray]</code></strong></p>
+<p>returns the connectivity frames for a time dependent problem on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_sampled_mises(boundary_only: bool = False) -&gt; numpy.ndarray</code></strong></p>
+<p>returns the von mises stresses on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_sampled_mises_avg(boundary_only: bool = False) -&gt; tuple</code></strong></p>
+<p>returns the von mises stresses and stress tensor averaged around a vertex on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_sampled_mises_avg_frames() -&gt; List[numpy.ndarray]</code></strong></p>
+<p>returns the von mises stresses per frame averaged around a vertex on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_sampled_mises_frames() -&gt; List[numpy.ndarray]</code></strong></p>
+<p>returns the von mises stresses frames on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_sampled_points_frames() -&gt; List[numpy.ndarray]</code></strong></p>
+<p>returns the points frames for a time dependent problem on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_sampled_solution(boundary_only: bool = False) -&gt; tuple</code></strong></p>
+<p>returns the solution on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_sampled_solution_frames() -&gt; List[numpy.ndarray]</code></strong></p>
+<p>returns the solution frames for a time dependent problem on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">get_solution() -&gt; numpy.ndarray</code></strong></p>
+<p>returns the solution</p>
+<p><strong><code class="codehilite">get_stresses(boundary_only: bool = False) -&gt; numpy.ndarray</code></strong></p>
+<p>returns the stress tensor on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
+<p><strong><code class="codehilite">load_mesh(*args, **kwargs)</code></strong></p>
+<p><strong><code class="codehilite">load_mesh()</code></strong></p>
+<p>Loads a mesh from the &lsquo;mesh&rsquo; field of the json and &lsquo;bc_tag&rsquo; if any bc tags</p>
+<p><strong><code class="codehilite">load_mesh(path: str)</code></strong></p>
+<p>Loads a mesh from the path and &lsquo;bc_tag&rsquo; from the json if any bc tags</p>
+<p><strong><code class="codehilite">load_mesh(path: str, bc_tag_path: str)</code></strong></p>
+<p>Loads a mesh and bc_tags from path</p>
+<p><strong><code class="codehilite">set_boundary_side_set_from_bary(boundary_marker: Callable[[numpy.ndarray[float64[1, n]]], int])</code></strong></p>
+<p>Sets the side set for the boundary conditions, the functions takes the barycenter of the boundary (edge or face)</p>
+<p><strong><code class="codehilite">set_boundary_side_set_from_bary_and_boundary(boundary_marker: Callable[[numpy.ndarray[float64[1, n]], bool], int])</code></strong></p>
+<p>Sets the side set for the boundary conditions, the functions takes the barycenter of the boundary (edge or face) and a flag that says if the element is boundary</p>
+<p><strong><code class="codehilite">set_boundary_side_set_from_v_ids(boundary_marker: Callable[[List[int], bool], int])</code></strong></p>
+<p>Sets the side set for the boundary conditions, the functions takes the sorted list of vertex id and a flag that says if the element is boundary</p>
+<p><strong><code class="codehilite">set_log_level(log_level: int)</code></strong></p>
+<p>sets polyfem log level, valid value between 0 (all logs) and 6 (no logs)</p>
+<p><strong><code class="codehilite">set_mesh(vertices: numpy.ndarray, connectivity: numpy.ndarray)</code></strong></p>
+<p>Loads a mesh from vertices and connectivity</p>
+<p><strong><code class="codehilite">set_rhs(*args, **kwargs)</code></strong></p>
+<p><strong><code class="codehilite">set_rhs(path: str)</code></strong></p>
+<p>Loads the rhs from a file</p>
+<p><strong><code class="codehilite">set_rhs(matrix: numpy.ndarray)</code></strong></p>
+<p>Sets the rhs</p>
+<p><strong><code class="codehilite">settings(json: str)</code></strong></p>
+<p>load PDE and problem parameters from the settings</p>
+<p><strong><code class="codehilite">solve()</code></strong></p>
+<p>solve the pde</p>
+<h2 id="class-tensorformulations">class TensorFormulations<a class="headerlink" href="#class-tensorformulations" title="Permanent link">&para;</a></h2>
+<p>HookeLinearElasticity = &lsquo;HookeLinearElasticity&rsquo;</p>
+<p>IncompressibleLinearElasticity = &lsquo;IncompressibleLinearElasticity&rsquo;</p>
+<p>LinearElasticity = &lsquo;LinearElasticity&rsquo;</p>
+<p>NeoHookean = &lsquo;NeoHookean&rsquo;</p>
+<p>Ogden = &lsquo;Ogden&rsquo;</p>
+<p>SaintVenant = &lsquo;SaintVenant&rsquo;</p>
+<p>Stokes = &lsquo;Stokes&rsquo;</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../python_examples/" title="Jupyter examples" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Jupyter examples
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/polyfem" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.9e1f3b71.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
