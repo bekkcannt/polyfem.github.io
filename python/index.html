@@ -313,26 +313,39 @@
     Examples
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bended-bar" title="Bended bar" class="md-nav__link">
+    Bended bar
+  </a>
+  
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#plotting" title="Plotting" class="md-nav__link">
     Plotting
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#plate-hole-example" title="Plate hole example" class="md-nav__link">
     Plate hole example
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#torsion" title="Torsion" class="md-nav__link">
     Torsion
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -396,26 +409,39 @@
     Examples
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bended-bar" title="Bended bar" class="md-nav__link">
+    Bended bar
+  </a>
+  
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#plotting" title="Plotting" class="md-nav__link">
     Plotting
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#plate-hole-example" title="Plate hole example" class="md-nav__link">
     Plate hole example
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#torsion" title="Torsion" class="md-nav__link">
     Torsion
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -441,11 +467,14 @@
                 <h1 id="python-bindings">Python bindings<a class="headerlink" href="#python-bindings" title="Permanent link">&para;</a></h1>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>The python bindings are in alpha (or pre alpha). Expect a lot of API changes and possible bugs. Use at your own peril!</p>
+<p>The python bindings are in alpha. Expect a lot of API changes and possible bugs. Use at your own peril!</p>
 </div>
-<p>I am making efforts to provide a simple python interface to Polyfem.
-For doing so I am maintaining  a <em>conda</em> package which can be easily installed <a href="https://anaconda.org/conda-forge/polyfempy">https://anaconda.org/conda-forge/polyfempy</a>.
-Note that the conda deployment is slow and this tutorial will follow the deployment version.</p>
+<p><img alt="Last update" src="https://anaconda.org/conda-forge/polyfempy/badges/latest_release_date.svg" />
+<img alt="Downloads" src="https://anaconda.org/conda-forge/polyfempy/badges/downloads.svg" />
+<img alt="Install" src="https://anaconda.org/conda-forge/polyfempy/badges/installer/conda.svg" /></p>
+<p>I am making efforts to provide a simple python interface to Polyfem.</p>
+<p>For doing so I am maintaining  a <em>conda</em> package which can be easily installed <a href="https://anaconda.org/conda-forge/polyfempy">https://anaconda.org/conda-forge/polyfempy</a>.</p>
+<p>Note that the conda deployment is slow and this tutorial will follow the deployment version.</p>
 <p>If you hare in a hurry for the juicy latest feature you can clone the repository <a href="https://github.com/polyfem/polyfem-python">Polyfem-python</a> and use <code class="codehilite">pip</code> to install:
 <div class="codehilite"><pre><span></span>python setup.py develop
 </pre></div>
@@ -454,7 +483,10 @@ and
 </pre></div>
 for testing.</p>
 <p>Note that the folders tests contain some tests which can be used as documentation.</p>
+<p>The documentation can be found <a href="../polyfempy_doc/">here</a>.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>For more and nice interactive example go to the <a href="../python_examples/">notebook</a>!</p>
+<h3 id="bended-bar">Bended bar<a class="headerlink" href="#bended-bar" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">polyfempy</span> <span class="kn">as</span> <span class="nn">pf</span>
 
 <span class="n">mesh_path</span> <span class="o">=</span> <span class="s2">&quot;mesh.mesh&quot;</span>
@@ -498,7 +530,7 @@ There are many ways to load a mesh and specify side-sets, please refer to the do
 <span class="n">mises</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">get_sampled_mises_avg</span><span class="p">()</span>
 </pre></div>
 
-<h2 id="plotting">Plotting<a class="headerlink" href="#plotting" title="Permanent link">&para;</a></h2>
+<h3 id="plotting">Plotting<a class="headerlink" href="#plotting" title="Permanent link">&para;</a></h3>
 <p>There are many python libraries for plotting, I created a simple function to display the results in 3D with <a href="https://plot.ly/">plotly</a>. It can be found in <code class="codehilite">tests/utils.py</code>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="kn">as</span> <span class="nn">plotly</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="kn">as</span> <span class="nn">go</span>
@@ -537,7 +569,7 @@ There are many ways to load a mesh and specify side-sets, please refer to the do
 
     <span class="n">plotly</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
 </pre></div></p>
-<h2 id="plate-hole-example">Plate hole example<a class="headerlink" href="#plate-hole-example" title="Permanent link">&para;</a></h2>
+<h3 id="plate-hole-example">Plate hole example<a class="headerlink" href="#plate-hole-example" title="Permanent link">&para;</a></h3>
 <p>Here is the python version of the plate with hole example explained <a href="https://polyfem.github.io/tutorial/#boundary-conditions">here</a>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">polyfempy</span> <span class="kn">as</span> <span class="nn">pf</span>
 
@@ -588,7 +620,7 @@ There are many ways to load a mesh and specify side-sets, please refer to the do
 <span class="c1">#finally plot with the above code</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">tets</span><span class="p">,</span> <span class="n">mises</span><span class="p">)</span>
 </pre></div></p>
-<h2 id="torsion">Torsion<a class="headerlink" href="#torsion" title="Permanent link">&para;</a></h2>
+<h3 id="torsion">Torsion<a class="headerlink" href="#torsion" title="Permanent link">&para;</a></h3>
 <p>A non-linear torsion example. Note that it is really similar to the above one.
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">polyfempy</span> <span class="kn">as</span> <span class="nn">pf</span>
 

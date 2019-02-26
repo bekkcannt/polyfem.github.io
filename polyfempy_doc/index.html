@@ -624,13 +624,12 @@
 <p>returns the solution</p>
 <p><strong><code class="codehilite">get_stresses(boundary_only: bool = False) -&gt; numpy.ndarray</code></strong></p>
 <p>returns the stress tensor on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
-<p><strong><code class="codehilite">load_mesh(*args, **kwargs)</code></strong></p>
-<p><strong><code class="codehilite">load_mesh()</code></strong></p>
-<p>Loads a mesh from the &lsquo;mesh&rsquo; field of the json and &lsquo;bc_tag&rsquo; if any bc tags</p>
-<p><strong><code class="codehilite">load_mesh(path: str)</code></strong></p>
+<p><strong><code class="codehilite">load_mesh_from_path(path: str)</code></strong></p>
 <p>Loads a mesh from the path and &lsquo;bc_tag&rsquo; from the json if any bc tags</p>
-<p><strong><code class="codehilite">load_mesh(path: str, bc_tag_path: str)</code></strong></p>
+<p><strong><code class="codehilite">load_mesh_from_path_and_tags(path: str, bc_tag_path: str)</code></strong></p>
 <p>Loads a mesh and bc_tags from path</p>
+<p><strong><code class="codehilite">load_mesh_from_settings()</code></strong></p>
+<p>Loads a mesh from the &lsquo;mesh&rsquo; field of the json and &lsquo;bc_tag&rsquo; if any bc tags</p>
 <p><strong><code class="codehilite">set_boundary_side_set_from_bary(boundary_marker: Callable[[numpy.ndarray[float64[1, n]]], int])</code></strong></p>
 <p>Sets the side set for the boundary conditions, the functions takes the barycenter of the boundary (edge or face)</p>
 <p><strong><code class="codehilite">set_boundary_side_set_from_bary_and_boundary(boundary_marker: Callable[[numpy.ndarray[float64[1, n]], bool], int])</code></strong></p>
@@ -641,11 +640,10 @@
 <p>sets polyfem log level, valid value between 0 (all logs) and 6 (no logs)</p>
 <p><strong><code class="codehilite">set_mesh(vertices: numpy.ndarray, connectivity: numpy.ndarray)</code></strong></p>
 <p>Loads a mesh from vertices and connectivity</p>
-<p><strong><code class="codehilite">set_rhs(*args, **kwargs)</code></strong></p>
-<p><strong><code class="codehilite">set_rhs(path: str)</code></strong></p>
-<p>Loads the rhs from a file</p>
 <p><strong><code class="codehilite">set_rhs(matrix: numpy.ndarray)</code></strong></p>
 <p>Sets the rhs</p>
+<p><strong><code class="codehilite">set_rhs_from_path(path: str)</code></strong></p>
+<p>Loads the rhs from a file</p>
 <p><strong><code class="codehilite">settings(json: str)</code></strong></p>
 <p>load PDE and problem parameters from the settings</p>
 <p><strong><code class="codehilite">solve()</code></strong></p>
@@ -655,7 +653,6 @@
 <p>IncompressibleLinearElasticity = &lsquo;IncompressibleLinearElasticity&rsquo;</p>
 <p>LinearElasticity = &lsquo;LinearElasticity&rsquo;</p>
 <p>NeoHookean = &lsquo;NeoHookean&rsquo;</p>
-<p>Ogden = &lsquo;Ogden&rsquo;</p>
 <p>SaintVenant = &lsquo;SaintVenant&rsquo;</p>
 <p>Stokes = &lsquo;Stokes&rsquo;</p>
                 
