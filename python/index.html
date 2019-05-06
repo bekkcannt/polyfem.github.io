@@ -309,8 +309,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
-    Examples
+  <a href="#tutorial" title="Tutorial" class="md-nav__link">
+    Tutorial
   </a>
   
 </li>
@@ -332,8 +332,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../python_examples/" title="Jupyter examples" class="md-nav__link">
-      Jupyter examples
+    <a href="../python_examples/" title="Jupyter tutorial" class="md-nav__link">
+      Jupyter tutorial
     </a>
   </li>
 
@@ -371,8 +371,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" title="Examples" class="md-nav__link">
-    Examples
+  <a href="#tutorial" title="Tutorial" class="md-nav__link">
+    Tutorial
   </a>
   
 </li>
@@ -397,9 +397,9 @@
                 
                 
                 <h1 id="python-bindings">Python bindings<a class="headerlink" href="#python-bindings" title="Permanent link">&para;</a></h1>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>The python bindings are in alpha. Expect a lot of API changes and possible bugs. Use at your own peril!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The python bindings are in beta. Expect API changes and possible bugs. Use at your own peril!</p>
 </div>
 <p><a href="https://anaconda.org/conda-forge/polyfempy"><img alt="Last update" src="https://anaconda.org/conda-forge/polyfempy/badges/latest_release_date.svg" /></a>
 <a href="https://anaconda.org/conda-forge/polyfempy"><img alt="Downloads" src="https://anaconda.org/conda-forge/polyfempy/badges/downloads.svg" /></a>
@@ -416,8 +416,43 @@ and
 for testing.</p>
 <p>Note that the folders tests contain some tests which can be used as documentation.</p>
 <p>The documentation can be found <a href="../polyfempy_doc/">here</a>.</p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>For more and nice interactive example go to the <a href="../python_examples/">notebook</a>!</p>
+<h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
+<p>Polyfem relies 3 main objects:
+1. <code class="codehilite">Settings</code> that contains the main settings such discretization order (e.g., <span><span class="MathJax_Preview">P_1</span><script type="math/tex">P_1</script></span> or <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span>), material parameters, formulation, etc.
+2. <code class="codehilite">Problem</code> that describe the problem you want to solve, that is the boundary conditions and right-hand side. There are some predefined problems, such as <code class="codehilite">DrivenCavity</code>, or generic problems, such as <code class="codehilite">GenericTensor</code>.
+3. <code class="codehilite">Solver</code> that is the actual FEM solver.</p>
+<p>The usage of specific problems is indented for benchmarking, in general you want to use the <code class="codehilite">GenericTensor</code> for tensor-based PDEs (e.g., elasticity) or <code class="codehilite">GenericScalar</code> for scalar PDEs (e.g., Poisson). </p>
+<p>A typical use of Polyfem is:
+<div class="codehilite"><pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="n">polyfempy</span><span class="o">.</span><span class="n">Settings</span><span class="p">()</span>
+<span class="c1"># set necessary settings</span>
+<span class="c1"># e.g. settings.discr_order = 2</span>
+
+<span class="n">problem</span> <span class="o">=</span> <span class="n">polyfempy</span><span class="o">.</span><span class="n">GenericTensor</span><span class="p">()</span> <span class="c1"># or any other problem</span>
+<span class="c1"># set problem related data</span>
+<span class="c1"># e.g. problem.set_displacement(1, [0, 0], [True, False])</span>
+
+<span class="n">settings</span><span class="o">.</span><span class="n">set_problem</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
+
+<span class="c1">#now we can create a solver and solve</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">polyfempy</span><span class="o">.</span><span class="n">Solver</span><span class="p">()</span>
+
+<span class="n">solver</span><span class="o">.</span><span class="n">settings</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">load_mesh_from_path</span><span class="p">(</span><span class="n">mesh_path</span><span class="p">)</span>
+
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+</pre></div></p>
+<p><strong>Note 1</strong>: for legacy reasons Polyfem always normalizes the mesh (i.e., rescale it to lay in the <span><span class="MathJax_Preview">[0,1]^d</span><script type="math/tex">[0,1]^d</script></span> box, you can use <code class="codehilite">setting.normalize_mesh = False</code> to disable this feature.</p>
+<p><strong>Note 2</strong>: the solution <span><span class="MathJax_Preview">u(x)</span><script type="math/tex">u(x)</script></span> of a FEM solver are the coefficients <span><span class="MathJax_Preview">u_i</span><script type="math/tex">u_i</script></span> you need to multiply the bases <span><span class="MathJax_Preview">\varphi_i(x)</span><script type="math/tex">\varphi_i(x)</script></span> with:
+$$
+u(x)=\sum u_i \varphi_i(x).
+$$
+The coefficients <span><span class="MathJax_Preview">u_i</span><script type="math/tex">u_i</script></span> are <em>unrelated</em> with the mesh vertices because of reordering of the nodes or high-order bases. For instance <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span> bases have additional nodes on the edges which do not exist in the mesh.</p>
+<p>For this reason Polyfem uses a <em>visualization mesh</em> where the solution is sampled at the vertices.
+This mesh has two advantages:
+1. it solves the problem of nodes reordering and additional nodes in the same way
+2. it provides a &ldquo;true&rdquo; visualization for high order solution by densely sampling each element (a <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span> solution is a piecewise quadratic function which is visualized in a picewise linear fashion, thus the need of a dense element sampling).</p>
+<p>To control the resolution of the visualization mesh use <code class="codehilite">settings.vismesh_rel_area</code>.</p>
+<p>For more details and nice interactive example go to the <a href="../python_examples/">notebook tutorial</a>!</p>
                 
                   
                 
@@ -453,13 +488,13 @@ for testing.</p>
           </a>
         
         
-          <a href="../python_examples/" title="Jupyter examples" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../python_examples/" title="Jupyter tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Jupyter examples
+                Jupyter tutorial
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
