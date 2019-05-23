@@ -429,10 +429,12 @@ for testing.</p>
 <p>Note that the folders tests contain some tests which can be used as documentation.</p>
 <p>The documentation can be found <a href="../polyfempy_doc/">here</a>.</p>
 <h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
-<p>Polyfem relies 3 main objects:
-1. <code class="codehilite">Settings</code> that contains the main settings such discretization order (e.g., <span><span class="MathJax_Preview">P_1</span><script type="math/tex">P_1</script></span> or <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span>), material parameters, formulation, etc.
-2. <code class="codehilite">Problem</code> that describe the problem you want to solve, that is the boundary conditions and right-hand side. There are some predefined problems, such as <code class="codehilite">DrivenCavity</code>, or generic problems, such as <code class="codehilite">GenericTensor</code>.
-3. <code class="codehilite">Solver</code> that is the actual FEM solver.</p>
+<p>Polyfem relies 3 main objects:</p>
+<ol>
+<li><code class="codehilite">Settings</code> that contains the main settings such discretization order (e.g., <span><span class="MathJax_Preview">P_1</span><script type="math/tex">P_1</script></span> or <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span>), material parameters, formulation, etc.</li>
+<li><code class="codehilite">Problem</code> that describe the problem you want to solve, that is the boundary conditions and right-hand side. There are some predefined problems, such as <code class="codehilite">DrivenCavity</code>, or generic problems, such as <code class="codehilite">GenericTensor</code>.</li>
+<li><code class="codehilite">Solver</code> that is the actual FEM solver.</li>
+</ol>
 <p>The usage of specific problems is indented for benchmarking, in general you want to use the <code class="codehilite">GenericTensor</code> for tensor-based PDEs (e.g., elasticity) or <code class="codehilite">GenericScalar</code> for scalar PDEs (e.g., Poisson). </p>
 <p>A typical use of Polyfem is:
 <div class="codehilite"><pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="n">polyfempy</span><span class="o">.</span><span class="n">Settings</span><span class="p">()</span>
