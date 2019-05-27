@@ -138,31 +138,6 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-          
         
       </div>
       
@@ -327,6 +302,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#notebook" title="Notebook" class="md-nav__link">
+    Notebook
+  </a>
+  
+</li>
+      
       
       
       
@@ -389,6 +371,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#notebook" title="Notebook" class="md-nav__link">
+    Notebook
+  </a>
+  
+</li>
+      
       
       
       
@@ -415,7 +404,8 @@
 </div>
 <p><a href="https://anaconda.org/conda-forge/polyfempy"><img alt="Last update" src="https://anaconda.org/conda-forge/polyfempy/badges/latest_release_date.svg" /></a>
 <a href="https://anaconda.org/conda-forge/polyfempy"><img alt="Downloads" src="https://anaconda.org/conda-forge/polyfempy/badges/downloads.svg" /></a>
-<a href="https://anaconda.org/conda-forge/polyfempy"><img alt="Install" src="https://anaconda.org/conda-forge/polyfempy/badges/installer/conda.svg" /></a></p>
+<a href="https://anaconda.org/conda-forge/polyfempy"><img alt="Install" src="https://anaconda.org/conda-forge/polyfempy/badges/installer/conda.svg" /></a>
+<a href="https://mybinder.org/v2/gh/polyfem/polyfem.github.io.git/docs?filepath=docs%2Fpython_examples.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <p>I am making efforts to provide a simple python interface to Polyfem.</p>
 <p>For doing so I am maintaining  a <em>conda</em> package which can be easily installed <a href="https://anaconda.org/conda-forge/polyfempy">https://anaconda.org/conda-forge/polyfempy</a>.</p>
 <p>Note that the conda deployment is slow and this tutorial will follow the deployment version.</p>
@@ -429,7 +419,7 @@ for testing.</p>
 <p>Note that the folders tests contain some tests which can be used as documentation.</p>
 <p>The documentation can be found <a href="../polyfempy_doc/">here</a>.</p>
 <h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
-<p>Polyfem relies 3 main objects:</p>
+<p>Polyfem relies on 3 main objects:</p>
 <ol>
 <li><code class="codehilite">Settings</code> that contains the main settings such discretization order (e.g., <span><span class="MathJax_Preview">P_1</span><script type="math/tex">P_1</script></span> or <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span>), material parameters, formulation, etc.</li>
 <li><code class="codehilite">Problem</code> that describe the problem you want to solve, that is the boundary conditions and right-hand side. There are some predefined problems, such as <code class="codehilite">DrivenCavity</code>, or generic problems, such as <code class="codehilite">GenericTensor</code>.</li>
@@ -466,8 +456,9 @@ This mesh has two advantages:
 1. it solves the problem of nodes reordering and additional nodes in the same way
 2. it provides a &ldquo;true&rdquo; visualization for high order solution by densely sampling each element (a <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span> solution is a piecewise quadratic function which is visualized in a picewise linear fashion, thus the need of a dense element sampling).</p>
 <p>To control the resolution of the visualization mesh use <code class="codehilite">settings.vismesh_rel_area</code>.</p>
+<h2 id="notebook">Notebook<a class="headerlink" href="#notebook" title="Permanent link">&para;</a></h2>
 <p>For more details and nice interactive example go to the <a href="../python_examples/">notebook tutorial</a>!</p>
-<p>Or just play with the tutorial in <a href="https://mybinder.org/v2/gh/polyfem/polyfem.github.io.git/docs?filepath=docs%2Fpython_examples.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a>.</p>
+<p>Or just play with the tutorial in <a href="https://mybinder.org/v2/gh/polyfem/polyfem.github.io.git/docs?filepath=docs%2Fpython_examples.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
                 
                   
                 
