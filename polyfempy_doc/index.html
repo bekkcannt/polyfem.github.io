@@ -449,6 +449,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#class-ostream_redirect" title="class ostream_redirect" class="md-nav__link">
+    class ostream_redirect
+  </a>
+  
+</li>
+      
       
       
       
@@ -560,6 +567,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#class-ostream_redirect" title="class ostream_redirect" class="md-nav__link">
+    class ostream_redirect
+  </a>
+  
+</li>
+      
       
       
       
@@ -604,7 +618,7 @@
 <p><strong><code class="codehilite">name()</code></strong></p>
 <p><strong><code class="codehilite">params()</code></strong></p>
 <h2 id="class-flow">class Flow<a class="headerlink" href="#class-flow" title="Permanent link">&para;</a></h2>
-<p>Inflow/outflow problem for fluids. You can specify the sideset for the moving fluxes and the list of obstacle sidesets. <a href="https://polyfem.github.io/documentation/#flow">https://polyfem.github.io/documentation/#flow</a></p>
+<p>Inflow/outflow problem for fluids. You can specify the sideset for the moving fluxes, the axial direction of the flow, and the list of obstacle sidesets. <a href="https://polyfem.github.io/documentation/#flow">https://polyfem.github.io/documentation/#flow</a></p>
 <p><strong><code class="codehilite">name()</code></strong></p>
 <p><strong><code class="codehilite">params()</code></strong></p>
 <h2 id="class-franke">class Franke<a class="headerlink" href="#class-franke" title="Permanent link">&para;</a></h2>
@@ -627,6 +641,12 @@
 <p>add the Neumann value value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
 <p><strong><code class="codehilite">name()</code></strong></p>
 <p><strong><code class="codehilite">params()</code></strong></p>
+<p><strong><code class="codehilite">set_displacement(id, value, is_dim_fixed=None)</code></strong></p>
+<p>set the displacement value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
+<p><strong><code class="codehilite">set_force(id, value)</code></strong></p>
+<p>set the force value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
+<p><strong><code class="codehilite">set_velocity(id, value, is_dim_fixed=None)</code></strong></p>
+<p>set the velocity value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
 <h2 id="class-gravity">class Gravity<a class="headerlink" href="#class-gravity" title="Permanent link">&para;</a></h2>
 <p>time dependent gravity problem <a href="https://polyfem.github.io/documentation/#gravity">https://polyfem.github.io/documentation/#gravity</a></p>
 <p><strong><code class="codehilite">name()</code></strong></p>
@@ -649,6 +669,8 @@
 <p>exports the solution as vtu</p>
 <p><strong><code class="codehilite">export_wire(path: str, isolines: bool = False)</code></strong></p>
 <p>exports wireframe of the mesh</p>
+<p><strong><code class="codehilite">get_boundary_sidesets() -&gt; tuple</code></strong></p>
+<p>exports get the boundary sideset, edges in 2d or trangles in 3d</p>
 <p><strong><code class="codehilite">get_log() -&gt; str</code></strong></p>
 <p>gets the log as json</p>
 <p><strong><code class="codehilite">get_pressure() -&gt; numpy.ndarray</code></strong></p>
@@ -673,7 +695,7 @@
 <p>returns the solution</p>
 <p><strong><code class="codehilite">get_stresses(boundary_only: bool = False) -&gt; numpy.ndarray</code></strong></p>
 <p>returns the stress tensor on a densly sampled mesh, use &lsquo;vismesh_rel_area&rsquo; to control density</p>
-<p><strong><code class="codehilite">load_mesh_from_path(path: str)</code></strong></p>
+<p><strong><code class="codehilite">load_mesh_from_path(path: str, normalize_mesh: bool = False, vismesh_rel_area: float = 1e-05, n_refs: int = 0, boundary_id_threshold: float = -1.0)</code></strong></p>
 <p>Loads a mesh from the path and &lsquo;bc_tag&rsquo; from the json if any bc tags</p>
 <p><strong><code class="codehilite">load_mesh_from_path_and_tags(path: str, bc_tag_path: str)</code></strong></p>
 <p>Loads a mesh and bc_tags from path</p>
@@ -685,6 +707,8 @@
 <p>Sets the side set for the boundary conditions, the functions takes the barycenter of the boundary (edge or face) and a flag that says if the element is boundary</p>
 <p><strong><code class="codehilite">set_boundary_side_set_from_v_ids(boundary_marker: Callable[[List[int], bool], int])</code></strong></p>
 <p>Sets the side set for the boundary conditions, the functions takes the sorted list of vertex id and a flag that says if the element is boundary</p>
+<p><strong><code class="codehilite">set_high_order_mesh(vertices: numpy.ndarray, connectivity: numpy.ndarray, nodes_pos: numpy.ndarray, nodes_indices: List[List[int]])</code></strong></p>
+<p>Loads an high order mesh from vertices, connectivity, nodes, and node indices mapping element to nodes</p>
 <p><strong><code class="codehilite">set_log_level(log_level: int)</code></strong></p>
 <p>sets polyfem log level, valid value between 0 (all logs) and 6 (no logs)</p>
 <p><strong><code class="codehilite">set_mesh(vertices: numpy.ndarray, connectivity: numpy.ndarray)</code></strong></p>
@@ -693,7 +717,7 @@
 <p>Sets the rhs</p>
 <p><strong><code class="codehilite">set_rhs_from_path(path: str)</code></strong></p>
 <p>Loads the rhs from a file</p>
-<p><strong><code class="codehilite">settings(json: str)</code></strong></p>
+<p><strong><code class="codehilite">settings(json: object)</code></strong></p>
 <p>load PDE and problem parameters from the settings</p>
 <p><strong><code class="codehilite">solve()</code></strong></p>
 <p>solve the pde</p>
@@ -704,6 +728,7 @@
 <p>NeoHookean = &lsquo;NeoHookean&rsquo;</p>
 <p>SaintVenant = &lsquo;SaintVenant&rsquo;</p>
 <p>Stokes = &lsquo;Stokes&rsquo;</p>
+<h2 id="class-ostream_redirect">class ostream_redirect<a class="headerlink" href="#class-ostream_redirect" title="Permanent link">&para;</a></h2>
                 
                   
                 

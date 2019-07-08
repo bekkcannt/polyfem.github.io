@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://polyfem.github.io/polyfem/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://polyfem.github.io/polyfem/cxx_index/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://polyfem.github.io/polyfem/tutorial/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://polyfem.github.io/polyfem/library/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://polyfem.github.io/polyfem/documentation/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://polyfem.github.io/polyfem/python/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://polyfem.github.io/polyfem/python_examples/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://polyfem.github.io/polyfem/polyfempy_doc/</loc>
-     <lastmod>2019-05-29</lastmod>
+     <lastmod>2019-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
