@@ -103,7 +103,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#class-settings" tabindex="1" class="md-skip">
+      <a href="#class-problem" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -373,6 +373,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#class-problem" title="class Problem" class="md-nav__link">
+    class Problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#class-settings" title="class Settings" class="md-nav__link">
     class Settings
   </a>
@@ -429,6 +436,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#class-pdes" title="class PDEs" class="md-nav__link">
+    class PDEs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#class-scalarformulations" title="class ScalarFormulations" class="md-nav__link">
     class ScalarFormulations
   </a>
@@ -445,13 +459,6 @@
         <li class="md-nav__item">
   <a href="#class-tensorformulations" title="class TensorFormulations" class="md-nav__link">
     class TensorFormulations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#class-ostream_redirect" title="class ostream_redirect" class="md-nav__link">
-    class ostream_redirect
   </a>
   
 </li>
@@ -491,6 +498,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#class-problem" title="class Problem" class="md-nav__link">
+    class Problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#class-settings" title="class Settings" class="md-nav__link">
     class Settings
   </a>
@@ -547,6 +561,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#class-pdes" title="class PDEs" class="md-nav__link">
+    class PDEs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#class-scalarformulations" title="class ScalarFormulations" class="md-nav__link">
     class ScalarFormulations
   </a>
@@ -563,13 +584,6 @@
         <li class="md-nav__item">
   <a href="#class-tensorformulations" title="class TensorFormulations" class="md-nav__link">
     class TensorFormulations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#class-ostream_redirect" title="class ostream_redirect" class="md-nav__link">
-    class ostream_redirect
   </a>
   
 </li>
@@ -595,18 +609,43 @@
                 
                   <h1>Docs</h1>
                 
-                <h2 id="class-settings">class Settings<a class="headerlink" href="#class-settings" title="Permanent link">&para;</a></h2>
-<p>Class that encodes the settings of the solver, it nodels the input json file</p>
+                <h2 id="class-problem">class Problem<a class="headerlink" href="#class-problem" title="Permanent link">&para;</a></h2>
+<p>Generic problem problem, scalar or tensor depending on the pde. Warning, this problem needs to be used with the <code class="codehilite">set_pde</code> function in settings</p>
+<p><strong><code class="codehilite">add_dirichlet_value(id, value, is_dirichlet_dim=None)</code></strong></p>
+<p>add the Dirichlet value value for the sideset id. Note the value must be a scalar, vector in 2D, or 3D depending on the problem. is_dirichlet_dim is a vector of boolean specifying which dimentions are fixed, only for vector-based problems.</p>
+<p><strong><code class="codehilite">add_neumann_value(id, value)</code></strong></p>
+<p>add the Neumann value value for the sideset id. Note the value must be a scalar, vector in 2D, or 3D depending on the problem</p>
+<p><strong><code class="codehilite">params()</code></strong></p>
+<p><strong><code class="codehilite">set_displacement(id, value, is_dim_fixed=None)</code></strong></p>
+<p>set the displacement value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
+<p><strong><code class="codehilite">set_force(id, value)</code></strong></p>
+<p>set the force value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
+<p><strong><code class="codehilite">set_velocity(id, value, is_dim_fixed=None)</code></strong></p>
+<p>set the velocity value for the sideset id. Note the value must be a vector in 2D or 3D depending on the problem</p>
+<p><strong><code class="codehilite">set_x_symmetric(id)</code></strong></p>
+<p>x coorinate is fixed, y is allowed to move (Neumann)</p>
+<p><strong><code class="codehilite">set_xy_symmetric(id)</code></strong></p>
+<p>xy coorinates are fixed, z is allowed to move (Neumann)</p>
+<p><strong><code class="codehilite">set_xz_symmetric(id)</code></strong></p>
+<p>xz coorinates are fixed, y is allowed to move (Neumann)</p>
+<p><strong><code class="codehilite">set_y_symmetric(id)</code></strong></p>
+<p>y coorinate is fixed, x is allowed to move (Neumann)</p>
+<p><strong><code class="codehilite">set_yz_symmetric(id)</code></strong></p>
+<p>yz coorinates are fixed, x is allowed to move (Neumann)</p>
+<h2 id="class-settings">class Settings<a class="headerlink" href="#class-settings" title="Permanent link">&para;</a></h2>
+<p>Class that encodes the settings of the solver, it models the input json file</p>
 <p><strong><code class="codehilite">serialize()</code></strong></p>
-<p>stringygied json description of this class, used to run the solver</p>
+<p>stringyfied json description of this class, used to run the solver</p>
 <p><strong><code class="codehilite">set_advanced_option(key, value)</code></strong></p>
 <p>Used to set any advanced option not present in this class, for instance set_advanced_option(&ldquo;use_spline&rdquo;,True), see <a href="https://polyfem.github.io/documentation/">https://polyfem.github.io/documentation/</a> for full list</p>
 <p><strong><code class="codehilite">set_isolines_export_path(path)</code></strong></p>
 <p>Sets the path to export the isolines of the solution</p>
 <p><strong><code class="codehilite">set_material_params(name, value)</code></strong></p>
 <p>set the material parameters, for instance set_material_params(&ldquo;E&rdquo;, 200) sets the Young&rsquo;s modulus E to 200. See <a href="https://polyfem.github.io/documentation/#formulations">https://polyfem.github.io/documentation/#formulations</a> for full list</p>
+<p><strong><code class="codehilite">set_pde(pde)</code></strong></p>
+<p>Sets the PDE to solve, use any of the polyfempy.PDEs</p>
 <p><strong><code class="codehilite">set_problem(problem)</code></strong></p>
-<p>Sets the problem, use any of the problems in Problems</p>
+<p>Sets the problem, use any of the problems in Problems or the Problem</p>
 <p><strong><code class="codehilite">set_solution_export_path(path)</code></strong></p>
 <p>Sets the path to save the solution</p>
 <p><strong><code class="codehilite">set_vtu_export_path(path, bounda_only=False)</code></strong></p>
@@ -655,6 +694,18 @@
 <p>3D torsion problem, specify which sideset to fix (fixed_boundary) and which one turns turning_boundary <a href="https://polyfem.github.io/documentation/#torsionelastic">https://polyfem.github.io/documentation/#torsionelastic</a></p>
 <p><strong><code class="codehilite">name()</code></strong></p>
 <p><strong><code class="codehilite">params()</code></strong></p>
+<h2 id="class-pdes">class PDEs<a class="headerlink" href="#class-pdes" title="Permanent link">&para;</a></h2>
+<p>List of supported partial differential equations</p>
+<p>Bilaplacian = &lsquo;Bilaplacian&rsquo;</p>
+<p>Helmholtz = &lsquo;Helmholtz&rsquo;</p>
+<p>HookeLinearElasticity = &lsquo;HookeLinearElasticity&rsquo;</p>
+<p>IncompressibleLinearElasticity = &lsquo;IncompressibleLinearElasticity&rsquo;</p>
+<p>Laplacian = &lsquo;Laplacian&rsquo;</p>
+<p>LinearElasticity = &lsquo;LinearElasticity&rsquo;</p>
+<p>NeoHookean = &lsquo;NeoHookean&rsquo;</p>
+<p>NonLinearElasticity = &lsquo;NonLinearElasticity&rsquo;</p>
+<p>SaintVenant = &lsquo;SaintVenant&rsquo;</p>
+<p>Stokes = &lsquo;Stokes&rsquo;</p>
 <h2 id="class-scalarformulations">class ScalarFormulations<a class="headerlink" href="#class-scalarformulations" title="Permanent link">&para;</a></h2>
 <p>Bilaplacian = &lsquo;Bilaplacian&rsquo;</p>
 <p>Helmholtz = &lsquo;Helmholtz&rsquo;</p>
@@ -726,9 +777,9 @@
 <p>IncompressibleLinearElasticity = &lsquo;IncompressibleLinearElasticity&rsquo;</p>
 <p>LinearElasticity = &lsquo;LinearElasticity&rsquo;</p>
 <p>NeoHookean = &lsquo;NeoHookean&rsquo;</p>
+<p>NonLinearElasticity = &lsquo;NonLinearElasticity&rsquo;</p>
 <p>SaintVenant = &lsquo;SaintVenant&rsquo;</p>
 <p>Stokes = &lsquo;Stokes&rsquo;</p>
-<h2 id="class-ostream_redirect">class ostream_redirect<a class="headerlink" href="#class-ostream_redirect" title="Permanent link">&para;</a></h2>
                 
                   
                 
