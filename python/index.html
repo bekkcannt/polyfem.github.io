@@ -35,7 +35,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="shortcut icon" href="../xxx.ico">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
@@ -487,7 +487,7 @@ for testing.</p>
 <li><code class="codehilite">Problem</code> that describe the problem you want to solve, that is the boundary conditions and right-hand side. There are some predefined problems, such as <code class="codehilite">DrivenCavity</code>, or generic problems, such as <code class="codehilite">GenericTensor</code>.</li>
 <li><code class="codehilite">Solver</code> that is the actual FEM solver.</li>
 </ol>
-<p>The usage of specific problems is indented for benchmarking, in general you want to use the <code class="codehilite">GenericTensor</code> for tensor-based PDEs (e.g., elasticity) or <code class="codehilite">GenericScalar</code> for scalar PDEs (e.g., Poisson). </p>
+<p>The usage of specific problems is indented for benchmarking, in general you want to use the <code class="codehilite">GenericTensor</code> for tensor-based PDEs (e.g., elasticity) or <code class="codehilite">GenericScalar</code> for scalar PDEs (e.g., Poisson).</p>
 <p>A typical use of Polyfem is:
 <div class="codehilite"><pre><span></span><span class="n">settings</span> <span class="o">=</span> <span class="n">polyfempy</span><span class="o">.</span><span class="n">Settings</span><span class="p">()</span>
 <span class="c1"># set necessary settings</span>
@@ -497,7 +497,7 @@ for testing.</p>
 <span class="c1"># set problem related data</span>
 <span class="c1"># e.g. problem.set_displacement(1, [0, 0], [True, False])</span>
 
-<span class="n">settings</span><span class="o">.</span><span class="n">set_problem</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span>
 
 <span class="c1">#now we can create a solver and solve</span>
 <span class="n">solver</span> <span class="o">=</span> <span class="n">polyfempy</span><span class="o">.</span><span class="n">Solver</span><span class="p">()</span>
@@ -507,7 +507,7 @@ for testing.</p>
 
 <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 </pre></div></p>
-<p><strong>Note 1</strong>: for legacy reasons Polyfem always normalizes the mesh (i.e., rescale it to lay in the <span><span class="MathJax_Preview">[0,1]^d</span><script type="math/tex">[0,1]^d</script></span> box, you can use <code class="codehilite">setting.normalize_mesh = False</code> to disable this feature.</p>
+<p><strong>Note 1</strong>: for legacy reasons Polyfem always normalizes the mesh (i.e., rescale it to lay in the <span><span class="MathJax_Preview">[0,1]^d</span><script type="math/tex">[0,1]^d</script></span> box, you can use <code class="codehilite">normalize_mesh = False</code> while loading to disable this feature.</p>
 <p><strong>Note 2</strong>: the solution <span><span class="MathJax_Preview">u(x)</span><script type="math/tex">u(x)</script></span> of a FEM solver are the coefficients <span><span class="MathJax_Preview">u_i</span><script type="math/tex">u_i</script></span> you need to multiply the bases <span><span class="MathJax_Preview">\varphi_i(x)</span><script type="math/tex">\varphi_i(x)</script></span> with:
 $$
 u(x)=\sum u_i \varphi_i(x).
@@ -517,7 +517,7 @@ The coefficients <span><span class="MathJax_Preview">u_i</span><script type="mat
 This mesh has two advantages:
 1. it solves the problem of nodes reordering and additional nodes in the same way
 2. it provides a &ldquo;true&rdquo; visualization for high order solution by densely sampling each element (a <span><span class="MathJax_Preview">P_2</span><script type="math/tex">P_2</script></span> solution is a piecewise quadratic function which is visualized in a picewise linear fashion, thus the need of a dense element sampling).</p>
-<p>To control the resolution of the visualization mesh use <code class="codehilite">settings.vismesh_rel_area</code>.</p>
+<p>To control the resolution of the visualization mesh use <code class="codehilite">vismesh_rel_area</code> named-argument while loading.</p>
 <h2 id="notebook">Notebook<a class="headerlink" href="#notebook" title="Permanent link">&para;</a></h2>
 <p>For more details and nice interactive example go to the <a href="../python_examples/">notebook tutorial</a>!</p>
 <p>Or just play with the tutorial in <a href="https://mybinder.org/v2/gh/polyfem/polyfem.github.io.git/docs?filepath=docs%2Fpython_examples.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
